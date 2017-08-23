@@ -241,21 +241,13 @@ namespace asg {
 	class simple_alloc
 	{
 	public:
-		static T *allocate(size_t n)
-		{
-			return 0 == n ? 0 : static_cast<T*>(Alloc::allocate(n * sizeof(T)));
-		}
+		static T *allocate(size_t n) 
+				{ return 0 == n ? 0 : static_cast<T*>(Alloc::allocate(n * sizeof(T))); }
 		static T *allocate(void)
-		{
-			return 0 == n ? 0 : static_cast<T*>(Alloc::allocate(sizeof(T)));
-		}
+				{ return 0 == n ? 0 : static_cast<T*>(Alloc::allocate(sizeof(T))); }
 		static void deallocate(T *ptr, size_t n)
-		{
-			if (n != 0) Alloc::deallocate(ptr, n * sizeof(T));
-		}
+				{ if (n != 0) Alloc::deallocate(ptr, n * sizeof(T)); }
 		static void deallocate(T *ptr)
-		{
-			Alloc::deallocate(ptr, sizeof(T));
-		}
+				{ Alloc::deallocate(ptr, sizeof(T)); }
 	};
 }
