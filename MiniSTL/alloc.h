@@ -14,9 +14,9 @@
 #pragma once
 #include <iostream>
 
-namespace asg {
-
 #define THROW_BAD_ALLOC std::cerr<<"out of memory" <<std::endl; exit(1);
+
+namespace asg {
 
 	//第一级分配器
 	class FirstAllocTemplate
