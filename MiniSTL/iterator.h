@@ -110,16 +110,16 @@ _get_iterator_category(const Iterator&) {
 	typedef typename iterator_traits<Iterator>::iterator_category category;
 	return category();
 }
-//template <class Iterator>
-//inline typename iterator_traits<Iterator>::value_type*
-//_get_value_type(const Iterator&) {
-//	return static_cast<typename iterator_traits<Iterator>::value_type*>(nullptr);
-//}
-//template <class Iterator>
-//inline typename iterator_traits<Iterator>::difference_type*
-//_get_difference_type(const Iterator&) {
-//	return static_cast<typename iterator_traits<Iterator>::difference_type*>(nullptr);
-//}
+template <class Iterator>
+inline typename iterator_traits<Iterator>::value_type*
+_get_value_type(const Iterator&) {
+	return static_cast<typename iterator_traits<Iterator>::value_type*>(nullptr);
+}
+template <class Iterator>
+inline typename iterator_traits<Iterator>::difference_type*
+_get_difference_type(const Iterator&) {
+	return static_cast<typename iterator_traits<Iterator>::difference_type*>(nullptr);
+}
 
 //get_distance（可接受两种参数输入输出）
 template <class InputIterator, class Distance>
